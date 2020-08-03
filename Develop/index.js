@@ -42,17 +42,28 @@ const questions = () => {
         type: 'input',
         name: 'tests',
         message: 'Provide tests and give examples on how to use them:'
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'Please provide your Github username:'
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Please provide your email:'
     }
 
 ])
-.then(answers => console.log(answers));
+.then(answers => answers);
 }
 
 // function to write README file
-function writeToFile(fileName, data) {
- fs.writeFile('generatedREADME.md', generateMarkdown(), err => {
+function writeToFile(data) {
+    console.log(data);
+ fs.writeFile('generatedREADME.md', generateMarkdown(data), err => {
      if (err) throw err
- })
+ });
 }
 
 questions() 
