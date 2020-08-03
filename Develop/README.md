@@ -18,7 +18,7 @@ To install, you must install node.js, along with installing these npm's: *Inquir
 
 
 ## Usage
-To use, navigate to the correct directory where the repository is stored. Then you may use the command line to input 'node index.js'. The terminal will then prompt you with questions, and follow up by creating a generated README with your information.
+To use, navigate to the correct directory where the repository is stored (make sure you are in the develop folder). Then you may use the command line to input 'node index.js'. The terminal will then prompt you with questions, and follow up by creating a generated README with your information.
 
 ## Credits
 MIT, ISC
