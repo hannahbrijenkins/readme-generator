@@ -1,13 +1,15 @@
 // require inquirer 
 const inquirer = require('inquirer');
 const Choice = require('inquirer/lib/objects/choice');
+const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // array of questions for user
-
-inquirer.prompt([
+const questions = () => {
+    return inquirer.prompt([
     {
         type: 'input',
-        name: 'name',
+        name: 'title',
         message: 'What is the title of your project?'
     },
     {
@@ -44,15 +46,22 @@ inquirer.prompt([
 
 ])
 .then(answers => console.log(answers));
+}
 
-// // function to write README file
-// function writeToFile(fileName, data) {
-// }
+// function to write README file
+function writeToFile(fileName, data) {
+ fs.writeFile('generatedREADME.md', generateMarkdown(), err => {
+     if (err) throw err
+ })
+}
 
-// // function to initialize program
-// function init() {
+questions() 
+.then(writeToFile);
 
-// }
+// function to initialize program
+function init() {
 
-// // function call to initialize program
-// init();
+}
+
+// function call to initialize program
+init();
